@@ -42,7 +42,7 @@ jobs:
         
     - name: Deploy
       run: |
-        python app.py
+        python $PYTHONPATH
         
         
 
