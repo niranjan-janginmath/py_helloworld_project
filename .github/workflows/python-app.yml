@@ -6,7 +6,8 @@ name: Python application
 on:
   push:
     branches: [ "main" ]
-
+  pull_request:
+    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -14,7 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -38,3 +39,4 @@ jobs:
         pip install pytest
         export PYTHONPATH=src
         pytest
+
